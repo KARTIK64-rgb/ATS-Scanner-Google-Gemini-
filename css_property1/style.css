@@ -1,0 +1,176 @@
+h1 {
+    color:blueviolet;
+}
+button{
+    color :brown;
+    background-color: yellow;;
+    
+}
+body{
+    background-color: black;
+}
+.myclass{
+    color:bisque;
+    text-align: right;
+    /* left center*/
+    font-family:courier;
+}
+    
+h2 {
+    text-decoration: underline;
+}
+h3{
+    text-align:center;
+    color:white;
+    font-weight:bolder;    /*make the the text light to dark*/
+    font-family:arial ;
+}
+a {
+    text-decoration: none;
+}
+#one{
+    color:aqua;
+    font-size: 35px;/*we generally write in terms of rem*/
+    text-align: left;
+}
+#two
+{
+    line-height: 100px; /* we write in terms of vh*/
+    color:brown;
+    text-transform: uppercase;
+}
+#box{
+    height:100px;
+    width:100px;
+    background-color: antiquewhite;
+    border-width: 10px;
+    border-style:solid;
+    border-color: blue;
+    /* border width style and color all three can be writeen in one line as border:10px solid blue*/
+    border-radius: 25px;
+    /*padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 100px;
+    padding-bottom: 100px;*/
+    padding:100px 100px 100px 100px;/*top right bottom left*/
+    background-image: url("https://imgs.search.brave.com/z-Qld1kJQDYqLu3HU2UGFNjI2wFpM8ZoQcBI6dbPnDo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jcmlj/dG9kYXkuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDI0LzA1/L3NreXNwb3J0cy12/aXJhdC1rb2hsaS1v/ZGktY3JpY2tldF82/MzYzODE1LmpwZw");
+    background-size: cover;
+
+    /*we can convert block like div or heading to inline element or inline to block by using display: inline; display:block; but there is one drawback that we cannot set block property for that we use display:inline-block >now we can set margin and padding*/
+}
+#three{
+    width:100px;
+    background-color: azure;
+    text-align: end;
+    border-radius: 50%; /* also in terms of rem*/
+    margin-top: 100px;
+    background-color: rgba(0,0,255,0.25);/*opacity how lighter or darker the color*/
+}
+
+
+/* position in css property
+suppose there is div box and we have to set the position with relative to its own postion so we use 
+box{
+    position:relative;
+    top:10px etc;like top left right bottom
+}
+
+now if we want to set the positon with respect to the ancestor elememt so position:absolute
+
+now if we want to set with respect to the browser so we use 
+position:fixed; and also if we set its postion to the top of the brwser so even after scrolling it remain fixed to the top 
+
+and if we set the position to be sticky so it becomes fixed when it appears in the browser i.e. position :sticky;
+NOTE: Generally we see that whicever element is writtten first and the element after to it will overlap but we can control this too by writing the z-index:0/1/2/-1...;
+positie value means higher the preference to cover and less value means the element  will be under to it 
+*/
+
+/*flex box*/
+
+div{
+    height:25px;
+    width:25px;
+    display:inline-block;
+    border:2px solid black;
+}
+#container{
+    height:200px;
+    width:800px;
+    background-color: antiquewhite;
+    display:flex;
+    flex-direction: column-reverse;/*in column adjustment the size of the boxes resize its height and width to be inside the flex box*/
+
+    /* also there is row,row reverse,column,column reverse*/
+     justify-content:space-evenly;
+     /* there justify:flex-start/flex-end/centre/space-evenly/ this is with respect to the main axis */
+    
+     /*align-items:centre......etc this aligns all the boxes this is respect to the cross axis */
+
+     /*if we want to set the alingment of a particular element along the cross axis then we use align-self=centre/flex-end...etc; this has higher priority than the align-items*/
+
+     /*flex-wrap=wrap; this is used to make the web site responsive as when the website is opened in mobile or less size width then it boxes insides of it maintains its height and width and wrap itself*/
+
+     /*we knoe that the boxes inside the flex adjust their size to remain inside the flex but we can control the shrink and grow by using flex-shrink=1/2/3...*/
+}
+@media(width:600px) /*this is used to make the website responsive*/
+{
+    body{
+        background-color: aqua;
+    }
+}
+/*max-width means less than equal to the desired parameter
+and to set the range we use (min-width:200px andmax-width:600px)*/
+
+/* transition */
+#transition
+{
+    height:200px;
+    width:200px;
+    background-color: beige;
+    margin-top: 10px;
+    transition-property: all;/* all of the property like hover active etc */
+    transition-duration: 2s;
+    transition-timing-function:steps(5);/* in which way the transition will take place*/
+
+    /* also there is transition-delay:2s etc */
+
+    /* also there is animation-iteration-count:5/infinite*/
+
+}
+#transition:hover {
+    background-color: blue;
+    color: yellow;
+    font-size: 20px;
+    height: 500px;
+    transform:rotate(45deg);
+    transform:translate(200px,100px);/* if we want to transalte in y  direction we use translateY*/
+    transform:skew(45deg)
+}
+#transition:active{ /* active state means when we click */
+   background-color: brown;
+}
+
+/*Animation*/
+/*Loader*/
+#loader
+{
+    height:200px;
+    width:200px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    border:10px solid blue;
+    border-top:10px solid yellow;
+    animation: spin 2s  ease-in-out 0s infinite normal;
+}
+@keyframes spin
+{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg)
+    }
+}
+
+/* cursor:pointer*
+changes the cursor to pointer like in submit form button/
